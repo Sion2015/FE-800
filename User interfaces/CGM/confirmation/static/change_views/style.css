@@ -1,0 +1,28 @@
+
+.narrow {
+	padding: 5px;
+}
+
+.hide-checkbox + label {
+display: block;
+float: left;
+width: 60px;
+padding: 3px;
+text-align: center;
+background-color: #8585ad;
+font-family: 'Oswald', sans-serif;
+color: #fff;
+-webkit-transition: background-color 0.1s ease-in-out;
+-moz-transition: background-color 0.1s ease-in-out;
+-o-transition: background-color 0.1s ease-in-out;
+transition: background-color 0.1s ease-in-out;
+}
+ 
+.hide-checkbox:checked + label {
+display: inline-block;
+background-color: #c61aff;
+}
+
+label:hover{
+	background-color: #9966ff;
+ }

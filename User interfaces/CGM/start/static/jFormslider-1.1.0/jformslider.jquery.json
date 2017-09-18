@@ -1,0 +1,33 @@
+{
+    "name": "jformslider",
+    "title": "A normal Form to sliding form plugin",
+    "description": "jFormslider is a jquey plugin which you can convert a form in to sliding form",
+    "keywords": [
+        "jformslider",
+        "validation",
+        "forms",
+		"slider",
+		"ajax",
+		"form wizard"
+        
+    ],
+    "version": "1.0.8",
+    "author": {
+        "name": "Harish U Warrier",
+		"email": "jfs@jformslider.com",
+        "url": "http://jformslider.com/about"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "bugs": "https://github.com/harishuw/jFormslider/issues/",
+    "homepage": "http://jformslider.com/",
+    "docs": "http://jformslider.com/docs/",
+    "download": "https://github.com/harishuw/jFormslider/",
+    "dependencies": {
+        "jquery": ">=1.8.3"
+    }
+}

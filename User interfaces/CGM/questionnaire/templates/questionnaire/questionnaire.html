@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Risk Tolerance Questionnaire</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'questionnaire/view.css' %}" media="all">
+<script src="{% static 'questionnaire/jquery-3.1.1.min.js' %}"></script>
+
+
+</head>
+<body id="main_body" >
+
+	<img id="top" src="{% static 'questionnaire/top.png' %}" alt="">
+	<div id="form_container">
+	
+		<h1><a>Risk Tolerance Questionnaire</a></h1>
+		<form id="form_18072" class="appnitro"  method="post" action="../risk_tolerance/">
+		{% csrf_token %}
+					<div class="form_description">
+			<h2>Risk Tolerance Questionnaire</h2>
+			<p>Tolerance for risk is a key consideration in determining your probable level of comfort with varying investing choices.
+			Your risk tolerance is scored based on three factors: (1) time horizon, (2) long-term goals and expectations, and 
+			(3) short-term risk attitudes.</p>
+		</div>						
+			<ul >
+			
+					<li class="section_break">
+			<h3>Time Horizon</h3>
+			<p>Your current situation and future income needs.</p>
+		</li>		<li id="li_3" >
+		<label class="description" for="element_3">1. What is your current age? </label>
+		<span>
+			<input id="element_3_1" name="element_3" class="element radio" type="radio" value="1" required/>
+<label class="choice" for="element_3_1">A. Less than 45</label>
+<input id="element_3_2" name="element_3" class="element radio" type="radio" value="2" required/>
+<label class="choice" for="element_3_2">B. 45 to 55</label>
+<input id="element_3_3" name="element_3" class="element radio" type="radio" value="3" required/>
+<label class="choice" for="element_3_3">C. 56 to 65</label>
+<input id="element_3_4" name="element_3" class="element radio" type="radio" value="4" required/>
+<label class="choice" for="element_3_4">D. 66 to 75</label>
+<input id="element_3_5" name="element_3" class="element radio" type="radio" value="5" required/>
+<label class="choice" for="element_3_5">E. Older than 75</label>
+
+		</span> 
+		</li>		<li id="li_4" >
+		<label class="description" for="element_4">2. When do you expect to start drawing income?  </label>
+		<span>
+			<input id="element_4_1" name="element_4" class="element radio" type="radio" value="1" required/>
+<label class="choice" for="element_4_1">A. Not for at least 20 years</label>
+<input id="element_4_2" name="element_4" class="element radio" type="radio" value="2" required/>
+<label class="choice" for="element_4_2">B. In 10 to 20 years</label>
+<input id="element_4_3" name="element_4" class="element radio" type="radio" value="3" required/>
+<label class="choice" for="element_4_3">C. In 5 to 10 years</label>
+<input id="element_4_4" name="element_4" class="element radio" type="radio" value="4" required/>
+<label class="choice" for="element_4_4">D. Not now, but within 5 years</label>
+<input id="element_4_5" name="element_4" class="element radio" type="radio" value="5" required/>
+<label class="choice" for="element_4_5">E. Immediately</label>
+
+		</span> 
+		</li>		<li class="section_break">
+			<h3>Long-Term Goals and Expectations </h3>
+			<p>Your views of how an investment should perform over the long term.</p>
+		</li>		<li id="li_8" >
+		<label class="description" for="element_8">3. What is your goal for this investment? </label>
+		<span>
+			<input id="element_8_1" name="element_8" class="element radio" type="radio" value="1" required/>
+<label class="choice" for="element_8_1">A. To grow aggressively</label>
+<input id="element_8_2" name="element_8" class="element radio" type="radio" value="2" required/>
+<label class="choice" for="element_8_2">B. To grow significantly</label>
+<input id="element_8_3" name="element_8" class="element radio" type="radio" value="3" required/>
+<label class="choice" for="element_8_3">C. To grow moderately</label>
+<input id="element_8_4" name="element_8" class="element radio" type="radio" value="4" required/>
+<label class="choice" for="element_8_4">D. To grow with caution</label>
+<input id="element_8_5" name="element_8" class="element radio" type="radio" value="5" required/>
+<label class="choice" for="element_8_5">E. To avoid losing money</label>
+
+		</span> 
+		</li>		<li id="li_9" >
+		<label class="description" for="element_9">4. Assuming normal market conditions, what would you expect from this investment over time? </label>
+		<span>
+			<input id="element_9_1" name="element_9" class="element radio" type="radio" value="1" required/>
+<label class="choice" for="element_9_1">A. To generally keep pace with the stock market</label>
+<input id="element_9_2" name="element_9" class="element radio" type="radio" value="2" required/>
+<label class="choice" for="element_9_2">B. To slightly trail the stock market, but make a good profit</label>
+<input id="element_9_3" name="element_9" class="element radio" type="radio" value="3" required/>
+<label class="choice" for="element_9_3">C. To trail the stock market, but make a moderate profit</label>
+<input id="element_9_4" name="element_9" class="element radio" type="radio" value="4" required/>
+<label class="choice" for="element_9_4">D. To have some stability, but make modest profits</label>
+<input id="element_9_5" name="element_9" class="element radio" type="radio" value="5" required/>
+<label class="choice" for="element_9_5">E. To have a high degree of stability, but make small profits</label>
+
+		</span> 
+		</li>		<li id="li_10" >
+		<label class="description" for="element_10">5. Suppose the stock market performs unusually poorly over the next decade, what would you expect from this investment? </label>
+		<span>
+			<input id="element_10_1" name="element_10" class="element radio" type="radio" value="1" required/>
+<label class="choice" for="element_10_1">A. To lose money</label>
+<input id="element_10_2" name="element_10" class="element radio" type="radio" value="2" required/>
+<label class="choice" for="element_10_2">B. To make very little or nothing</label>
+<input id="element_10_3" name="element_10" class="element radio" type="radio" value="3" required/>
+<label class="choice" for="element_10_3">C. To eke out a little gain</label>
+<input id="element_10_5" name="element_10" class="element radio" type="radio" value="5" required/>
+<label class="choice" for="element_10_5">D. To make a modest gain</label>
+<input id="element_10_4" name="element_10" class="element radio" type="radio" value="4" required/>
+<label class="choice" for="element_10_4">E. To be little affected by what happens in the stock market</label>
+
+		</span> 
+		</li>		<li class="section_break">
+			<h3>Short-Term Risk </h3>
+			<p>Attitudes Your attitude toward short-term volatility.</p>
+		</li>		<li id="li_11" >
+		<label class="description" for="element_11">6. Which of these statements would best describe your attitudes about the next three years' performance of this investment? </label>
+		<span>
+			<input id="element_11_1" name="element_11" class="element radio" type="radio" value="1" required/>
+<label class="choice" for="element_11_1">A. I don't mind if I lose money</label>
+<input id="element_11_2" name="element_11" class="element radio" type="radio" value="2" required/>
+<label class="choice" for="element_11_2">B. I can tolerate a loss</label>
+<input id="element_11_3" name="element_11" class="element radio" type="radio" value="3" required/>
+<label class="choice" for="element_11_3">C. I can tolerate a small loss</label>
+<input id="element_11_4" name="element_11" class="element radio" type="radio" value="4" required/>
+<label class="choice" for="element_11_4">D. I'd have a hard time tolerating any losses</label>
+<input id="element_11_5" name="element_11" class="element radio" type="radio" value="5" required/>
+<label class="choice" for="element_11_5">E. I need to see at least a little return</label>
+
+		</span> 
+		</li>		<li id="li_12" >
+		<label class="description" for="element_12">7. Which of these statements would best describe your attitudes about the next three months' performance of this investment? </label>
+		<span>
+			<input id="element_12_1" name="element_12" class="element radio" type="radio" value="1" required/>
+<label class="choice" for="element_12_1">A. Who cares? One calendar quarter means nothing.</label>
+<input id="element_12_2" name="element_12" class="element radio" type="radio" value="2" required/>
+<label class="choice" for="element_12_2">B. I wouldn't worry about losses in that time frame</label>
+<input id="element_12_3" name="element_12" class="element radio" type="radio" value="3" required/>
+<label class="choice" for="element_12_3">C. If I suffered a loss of greater than 10%, I'd get concerned</label>
+<input id="element_12_4" name="element_12" class="element radio" type="radio" value="4" required/>
+<label class="choice" for="element_12_4">D. I can only tolerate small short-term losses</label>
+<input id="element_12_5" name="element_12" class="element radio" type="radio" value="5" required/>
+<label class="choice" for="element_12_5">E. I'd have a hard time accepting any losses</label>
+
+		</span> 
+		</li>
+			
+					<li class="buttons">
+			    <input type="hidden" name="form_id" value="18072" />
+			    <input id="saveForm" class="button_text" type="submit" value="Submit" />
+
+		</li>
+			</ul>
+		</form>	
+
+	</div>
+	
+	
+<script>
+
+	function getCookie(name) {
+	    var cookieValue = null;
+	    if (document.cookie && document.cookie !== '') {
+	        var cookies = document.cookie.split(';');
+	        for (var i = 0; i < cookies.length; i++) {
+	            var cookie = jQuery.trim(cookies[i]);
+	            // Does this cookie string begin with the name we want?
+	            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+	                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+	                break;
+	            }
+	        }
+	    }
+	    return cookieValue;
+	}
+	var csrftoken = getCookie('csrftoken');
+	
+
+
+
+	function ajaxget() {
+		function ajaxRequest(){
+		 var activexmodes=["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"] //activeX versions to check for in IE
+		 if (window.ActiveXObject){ //Test for support for ActiveXObject in IE first (as XMLHttpRequest in IE7 is broken)
+		  for (var i=0; i<activexmodes.length; i++){
+		   try{
+			return new ActiveXObject(activexmodes[i])
+		   }
+		   catch(e){
+			//suppress error
+		   }
+		  }
+		 }
+		 else if (window.XMLHttpRequest) // if Mozilla, Safari etc
+		  return new XMLHttpRequest()
+		 else
+		  return false
+		}
+
+
+		var mypostrequest=new ajaxRequest()
+		mypostrequest.onreadystatechange=function(){
+		 if (mypostrequest.readyState==4){
+		  if (mypostrequest.status==200 || window.location.href.indexOf("http")==-1){
+		   document.getElementById("result").innerHTML=mypostrequest.responseText
+		  }
+		  else{
+		   alert("An error has occured making the request")
+		  }
+		 }
+	}
+		
+		var q1=encodeURIComponent(6-document.querySelector('input[name="element_3"]:checked').value)
+		var q2=encodeURIComponent(6-document.querySelector('input[name="element_4"]:checked').value)
+		var q3=encodeURIComponent(6-document.querySelector('input[name="element_8"]:checked').value)
+		var q4=encodeURIComponent(6-document.querySelector('input[name="element_9"]:checked').value)
+		var q5=encodeURIComponent(6-document.querySelector('input[name="element_10"]:checked').value)
+		var q6=encodeURIComponent(6-document.querySelector('input[name="element_11"]:checked').value)
+		var q7=encodeURIComponent(6-document.querySelector('input[name="element_12"]:checked').value)
+		
+		var parameters="&q1="+q1+"&q2="+q2+"&q3="+q3+"&q4="+q4+"&q5="+q5+"&q6="+q6+"&q7="+q7
+		mypostrequest.open("POST", "../risk_tolerance/", true)
+		mypostrequest.setRequestHeader("X-CSRFToken", csrftoken)
+		mypostrequest.send(parameters)
+
+		$(document).ready(function(){
+
+			$('html,body').animate({scrollTop: "1800px"}, 1000);
+
+		});	
+	}
+	
+	
+
+</script>	
+<img id="bottom" src="{% static 'questionnaire/bottom.png' %}" alt="">
+
+<div id="result"> 
+</div>	
+	
+	
+	
+	
+	
+	
+	</body>
+</html>

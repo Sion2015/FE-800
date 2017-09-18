@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<title>Management Home</title>
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 160px;background: grey;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-700px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-700px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+</style>
+<link rel="icon" type="image/gif" href={% static "/home/logo.png" %} />
+
+<body class="w3-white">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src={% static "/home/logo3.png" %} style="width:100%; padding: 16px;" alt="logo">
+  <a href="../management" class="w3-bar-item w3-button w3-padding-large w3-hover-black ">
+    <i class="w3-xxlarge"></i>
+    <h4>Home</h4>
+    <p>Current strategy</p>
+  </a>
+  <a href="../management_step_1" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="w3-xxlarge"></i>
+	<h4>Step 1</h4>
+    <p>Select ETFs</p>
+  </a>
+  <a href="../management_step_2" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="w3-xxlarge"></i>
+	<h4>Step 2</h4>
+    <p>Determine rebalance method</p>
+  </a>
+  <a href="../management_step_3" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="w3-xxlarge"></i>
+	<h4>Step 3</h4>
+    <p>Set taus</p>
+  </a>
+  <a href="../management_step_4" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="w3-xxlarge"></i>
+	<h4>Step 4</h4>
+    <p>Add views</p>
+  </a>
+  <a href="../management_step_5" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="w3-xxlarge"></i>
+	<h4>Step 5</h4>
+    <p>Review your strategy</p>
+  </a>
+  <a href="../management_step_6" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="w3-xxlarge"></i>
+	<h4>Finish</h4>
+    <p>Implement the strategy</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-grey w3-opacity w3-hover-opacity-off w3-center w3-small">
+	<a href="#" class="w3-bar-item w3-button" style="width:25% !important">Home</a>
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">Step 1</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">Step 2</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">Step 3</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">Step 4</a>
+	<a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">Step 5</a>
+	<a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">Finish</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-light-grey">
+    <h1 class="w3-jumbo">New Strategy</h1>
+    
+			<hr  class="w3-opacity">
+    		<div class="w3-container w3-padding-16 w3-left-align">
+				<h1>Step 5</h1>
+				<h2>The parameters for clients' interface: </h2>
+				
+				<h3>ETF list: {{ my_tickers }}</h3>							
+				<h3>Drift threshold for portfolio rebalancing: {{ drift_threshold }}%</h3>
+				<h3>Frequency for MVO: {{ rebalancing_frequency }}</h3>
+				<h3>Tau list: {{ risk_levels }}</h3>	
+				<h3>Views: {{ views }}</h3>
+			</div>
+	
+			<div class="w3-container w3-padding-16 w3-left-align">
+				<a href="https://plot.ly/~sion2015/2/" target="_blank" title="pie_all" style="display: block; text-align: center;"><img src="https://plot.ly/~sion2015/2.png" alt="pie_all" style="max-width: 100%;width: 1200px;"  width="1200" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+				<script data-plotly="sion2015:2" src="https://plot.ly/embed.js" async></script>
+			</div>
+
+
+			<div class="w3-container w3-padding-16 w3-left-align">
+				<a href="https://plot.ly/~sion2015/0/" target="_blank" title="line_all" style="display: block; text-align: center;"><img src="https://plot.ly/~sion2015/0.png" alt="line_all" style="max-width: 100%;width: 1200px;"  width="1200" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+				<script data-plotly="sion2015:0" src="https://plot.ly/embed.js" async></script>
+			</div>
+
+			
+			<div class="w3-container w3-padding-16 w3-left-align">
+				<table class="w3-table-all w3-hoverable">
+					<tr>
+						<th>        </th><th>annualized return</th><th>annual vol</th><th>sharp ratio</th><th>max drawdown</th><th>99% VaR</th><th>sortino ratio</th>					
+					</tr>
+					<tr>
+						<td>Very conservative</td><td>{{ annual_return_1 }}</td><td>{{ annual_vol_1 }}</td><td>{{ sharpe_ratio_1 }}</td><td>{{ max_drawdown_1 }}</td><td>{{ VaR_1 }}</td><td>{{ sortino_ratio_1 }}</td>
+					</tr>
+					<tr>
+						<td>Conservative</td><td>{{ annual_return_2 }}</td><td>{{ annual_vol_2 }}</td><td>{{ sharpe_ratio_2 }}</td><td>{{ max_drawdown_2 }}</td><td>{{ VaR_2 }}</td><td>{{ sortino_ratio_2 }}</td>
+					</tr>
+					<tr>
+						<td>Moderate</td><td>{{ annual_return_3 }}</td><td>{{ annual_vol_3 }}</td><td>{{ sharpe_ratio_3 }}</td><td>{{ max_drawdown_3 }}</td><td>{{ VaR_3 }}</td><td>{{ sortino_ratio_3 }}</td>
+					</tr>
+					<tr>
+						<td>Aggressive</td><td>{{ annual_return_4 }}</td><td>{{ annual_vol_4 }}</td><td>{{ sharpe_ratio_4 }}</td><td>{{ max_drawdown_4 }}</td><td>{{ VaR_4 }}</td><td>{{ sortino_ratio_4 }}</td>
+					</tr>
+					<tr>
+						<td>Very aggressive</td><td>{{ annual_return_5 }}</td><td>{{ annual_vol_5 }}</td><td>{{ sharpe_ratio_5 }}</td><td>{{ max_drawdown_5 }}</td><td>{{ VaR_5 }}</td><td>{{ sortino_ratio_5 }}</td>
+					</tr>
+					<tr class="w3-blue">
+						<td>Benchmark</td><td>{{ annual_return_b }}</td><td>{{ annual_vol_b }}</td><td>{{ sharpe_ratio_b }}</td><td>{{ max_drawdown_b }}</td><td>{{ VaR_b }}</td><td>{{ sortino_ratio_b }}</td>
+					</tr>					
+				</table>
+			</div>
+
+			<!--<p id="myBtn"><a class="w3-button w3-black" href="../management_step_6"> Use the strategy </a></p>-->
+			<!-- Trigger/Open The Modal -->
+			<button id="myBtn" class="w3-button w3-black">Use the strategy</button>
+  </header>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <br><br>
+    </div>
+    <div class="modal-body">
+    	
+    <form action="../management_step_6">
+      <p><input type="checkbox" name="agree" value=1 required>I understand that my new stategy will update the interface for clients.</p>
+
+      <input type="submit"/><br><br>
+    </form>
+      
+    </div>
+    <div class="modal-footer">
+      <br>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+  
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>

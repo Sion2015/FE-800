@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<title>CGM Start</title>
+
+{% load static %}
+
+<meta charset="UTF-8">
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="http:////maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src={% static "/jFormslider-1.1.0/js/jFormslider.js" %}></script>
+<link rel="icon" type="image/gif" href={% static "/welcome/logo.png" %} />
+<!--<script src={% static "/management/jquery-3.1.1.min.js" %}></script>
+
+<script src={% static "/management/jquery.steps.js" %}></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+<link rel="stylesheet" href={% static "/management/jquery.steps.css" %}>
+<link rel="stylesheet" href={% static "/management/normalize.css" %}>
+<link rel="stylesheet" href={% static "/management/m.css" %}>
+<script src={% static "/management/jquery-3.1.1.min.js" %}></script>-->
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+	
+    background-position: center;
+    background-size: cover;
+    background-image: url({% static "/welcome/bb2.jpg" %});
+    min-height: 100%;
+	-webkit-filter: brightness(100%); /* Safari 6.0 - 9.0 */
+    filter: brightness(100%);
+	
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+
+.nav_class
+{
+
+	margin-top:27px;
+}
+
+</style>
+
+<script>
+$(document).ready(function(){
+
+	var options=
+	{
+		width:500,//width of slider
+		height:217,//height of slider
+		next_prev:true,//will show next and prev links
+		next_class:'btn btn-primary btn-xs',//class for next link
+		prev_class:'btn btn-primary btn-xs',//class for prev link
+		error_class:'alert alert-danger',//class for validation errors
+		texts:{
+				next:'next',//verbiage for next link
+				prev:'back'//verbiage for prev link
+			  },
+		speed:600,//slider speed
+		error_position:'inside',
+		validation:true,
+		nav_class:'nav_class',
+		submit_class:'btn btn-primary btn-xs green',
+		submit_id:'',
+		submit_btn:true,
+        texts:{submit:"show plan"},
+        submit_handler:function(){},
+		success:function(){
+		
+		alert("Success ");
+		},
+		
+	};
+
+	$('#slider').jFormslider(options);
+
+})
+
+function last_slide()
+{
+	alert("you are going to reach last slide if this function retuned true");
+	return true;
+}
+function next_on()
+{
+$('[ajax-url]').show()
+return true;
+}
+
+</script>
+
+
+
+
+<body>
+<!-- Navbar 
+<a class="typeform-share button"  href="https://ninachen1.typeform.com/to/L3dqRV?typeform-collect=0" data-mode="popup" data-auto-open=true target="_blank"></a><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id="typef_orm_share",b="https://s3-eu-west-1.amazonaws.com/share.typeform.com/";if(!gi.call(d,id)){js=ce.call(d,"script");js.id=id;js.src=b+"share.js";q=gt.call(d,"script")[0];q.parentNode.insertBefore(js,q)}})()</script>
+ -->
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+    <a href="../home/#home" class="w3-bar-item w3-button w3-wide" style="padding:5px 30px">
+		<img class="w3-image" style="height:52px;" src={% static "/welcome/logo4.png" %} >
+	</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+	  
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+	  <a href="#example" class="w3-bar-item w3-button"><i class="fa fa-th"></i> EXAMPLE</a>	  
+	  <div class="w3-dropdown-hover">
+		<button class="w3-button"><a href="#methodology"><i class="fa fa-gears"></i> METHODOLOGY</a></button>
+		<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			<a href="#assets" class="w3-bar-item w3-button"><i class="fa fa-file-text"></i> The Set of Asset Classes </a>
+			<a href="#portfolio" class="w3-bar-item w3-button"><i class="fa fa-pie-chart"></i> Allocating Assets </a>
+			<a href="#risk" class="w3-bar-item w3-button"><i class="fa fa-tachometer"></i> Risk Tolerance </a>
+			<a href="#tax" class="w3-bar-item w3-button"><span class="glyphicon glyphicon-apple"></span> Tax Loss Harvesting </a>
+			<a href="#rebalance" class="w3-bar-item w3-button"><i class="fa fa-balance-scale"></i> Rebalancing & Ongoing Monitoring </a>
+			<a href="#database" class="w3-bar-item w3-button"><i class="fa fa-database"></i> Database </a>
+
+		</div>
+	  </div>
+	  
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>     
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close A—</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#example" onclick="w3_close()" class="w3-bar-item w3-button">EXAMPLE</a>
+  <a href="#methodology" onclick="w3_close()" class="w3-bar-item w3-button"> METHODOLOGY</a>
+
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-topleft" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Risk Tolerance Questionnaire</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Risk Tolerance Questionnaire</span><br>
+	<!--<form id="form_1" class="appnitro"  method="post" action="../show_plan/">
+		{% csrf_token %}
+		<p><span class="w3-large">Please input your email: </span></p>
+		<p><input type="email" name="email" size="40"/> </span></p>
+		<p><input type="submit" value="Explore your plan" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off"/></p>
+	</form>-->
+</header>
+<div class="container">
+
+
+	<div class="container-fluid">
+	  <div class="row">
+	  <div class="col-md-12">
+	  <h4>Risk Tolerance Questionnaire</h4>
+	  <!--slider starts-->
+				<div id="slider" class="form">
+			<form id="slider" class="form jformslider" style="width: 400px;" method="post" action="../risk_tolerance/">
+			{% csrf_token %}
+                <ul data-ul="#slider" style="margin-top: 600px;">
+                    <li data-id="first_slide" data-callafter="next_on()" data-li="#slider" style="width: 382.5px;"><div class="nav_class_top"><a class="btn btn-primary btn-xs" data-next="#slider" style="float:right">Next <i class="glyphicon glyphicon-forward"></i></a></div>
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2" data-live="email">Email address</label>
+                            <input data-maxlength="9" type="text" id="em1" name="em1" class="form-control" placeholder="Enter email" email="">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Name</label>
+                            <input data-minlength="5" type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required="" data-lmsg="Minimum 5 letters required">
+                        </div>
+                        <button type="button" class="btn btn-info" onclick="$('#slider').gotoSlide('last_slide')">Last slide <i class="fa fa-arrow-right"></i></button>
+                    </li>
+                    <li data-id="ajax_slide" ajax-url="http://jformslider.com/html/" ajax-data="{&quot;name&quot;:&quot;Loaded with ajax&quot;}" hide="" ajax-beforesubmit="$('#slider').jAppbusy({status:'show',top:50,left:200});" ajax-success="$('#slider').jAppbusy({status:'hide'});" data-li="#slider" style="display: block; width: 382.5px;" ajax-done=""><div class="jformslider_ajax_target">	Loaded with ajax
+					<div class="form-group">
+
+					<label class="sr-only" for="eml2">Email address</label>
+
+					<input type="text" id="eml2" class="form-control" data-toggle="tooltip" data-placement="top" title="Enter valid email" placeholder="Enter email" email="">
+
+					</div>
+
+				<div class="form-group">
+
+					<label class="sr-only" for="name1">Name</label>
+
+					<input type="text" class="form-control" id="name1" placeholder="Enter Name" required="">
+
+				</div></div><div class="nav_class_top"><a class="btn btn-primary btn-xs" data-prev="#slider" style="float:left"><i class="glyphicon glyphicon-backward"></i> Back</a><a class="btn btn-primary btn-xs" data-next="#slider" style="float:right">Next <i class="glyphicon glyphicon-forward"></i></a></div>
+                        
+                        
+                    </li>
+                    <li data-id="last_slide" data-callbefore="last_slide()" data-li="#slider" style="width: 382.5px;"><div class="nav_class_top"><a class="btn btn-primary btn-xs" data-prev="#slider" style="float:left"><i class="glyphicon glyphicon-backward"></i> Back</a><button data-submit="#slider" type="submit" class="btn btn-primary btn-xs green" style="float:right">Submit <i class="fa fa-hand-o-up"></i></button></div>
+                        <div class="form-group">
+                            <label for="exampleInputFile" class="sr-only">Select</label>
+                            <select required="" id="exampleInputFile1">
+                                <option value="">Select</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="lastpage">Something</label>
+                            <input type="text" class="form-control" id="lastpage" placeholder="Enter something" required="" data-msg="This is required">
+                        </div>
+                       
+                        <button type="button" class="btn btn-info" onclick="$('#slider').gotoSlide('first_slide')" style="margin-bottom: 10px;"><i class="fa fa-arrow-left"></i> First slide</button>
+                    </li>
+                </ul>
+            </form>	
+		</div>
+		</div>
+		</div>
+		
+	</div>
+
+
+
+
+
+</div>
+<script>
+
+$(document).ready(function(){
+
+	$('.download').click(function(e){
+		e.preventDefault();
+		var loc=$(this).attr('href');
+		$.ajax({url:"http://harishuw.5gbfree.com/api/jformslider.php",success:function(data){
+		
+			window.location=loc;
+		
+		},error:function(){
+		
+		
+		window.location=loc;
+		}});
+	
+	});
+
+
+});
+
+
+</script>
+</body>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Risk Tolerance Result</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'questionnaire/view.css' %}" media="all">
+<script src="{% static 'questionnaire/jquery-3.1.1.min.js' %}"></script>
+
+
+</head>
+<body id="main_body" >
+<img id="top" src="{% static 'questionnaire/top.png' %}" alt="">
+
+	<div id="form_container">
+	
+		<h1><a>Risk Tolerance Questionnaire</a></h1>
+		<form id="form_18073" class="appnitro"  method="post" action="../show_plan/">
+			{% csrf_token %}
+			<div class="form_description">
+				<h2>Scoring</h2>		
+			</div>
+
+				
+			<br/>				
+			<table style="width:80%">
+				<tr>
+					<th>For each qestion</th><th>Your score</th>
+				</tr>		
+				<tr>
+					<td>A=5, B=4, C=3, D=2, E=1 </td><td>{{ q1 }}</td>
+				</tr>
+				<tr>
+					<td>A=5, B=4, C=3, D=2, E=1 </td><td>{{ q2 }}</td>
+				</tr>
+				<tr>
+					<td>A=5, B=4, C=3, D=2, E=1 </td><td>{{ q3 }}</td>
+				</tr>	
+				<tr>
+					<td>A=5, B=4, C=3, D=2, E=1 </td><td>{{ q4 }}</td>
+				</tr>	
+				<tr>
+					<td>A=5, B=4, C=3, D=2, E=1 </td><td>{{ q5 }}</td>
+				</tr>
+				<tr>
+					<td>A=5, B=4, C=3, D=2, E=1 </td><td>{{ q6 }}</td>
+				</tr>	
+				<tr>
+					<td>A=5, B=4, C=3, D=2, E=1 </td><td>{{ q7 }}</td>
+				</tr>
+				<tr>
+					<th>Total</th><th>{{ score }}</th>
+				</tr>
+			</table>
+			<br/>	
+			
+			
+			
+			
+			<table style="width:80%">
+				<tr>
+					<th>Score</th><th>Result</th>
+				</tr>		
+				<tr>
+					<td>7-10</td><td>Very Conservative </td>
+				</tr>
+				<tr>
+					<td>11-17</td><td>Conservative </td>
+				</tr>
+				<tr>
+					<td>18-24</td><td>Moderate </td>
+				</tr>	
+				<tr>
+					<td>25-31</td><td>Aggressive </td>
+				</tr>	
+				<tr>
+					<td>32-35</td><td>Very Aggressive </td>
+				</tr>
+				<tr>
+					<th>Your risk tolerance</th><th>{{ result }}</th>
+				</tr>
+			</table>
+			<br/>
+			<input name="risk_level" type="hidden" value={{ level }}/>
+			<input id="saveForm" class="button_text" type="submit" value="Show plans" />
+		</form>	
+
+	</div>		
+<img id="bottom" src="{% static 'questionnaire/bottom.png' %}" alt="">
+
+</body>

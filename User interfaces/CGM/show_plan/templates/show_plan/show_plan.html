@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<title>Financial Plan</title>
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="icon" type="image/gif" href={% static "/welcome/logo.png" %} />
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+	
+    background-position: center;
+    background-size: cover;
+    background-image: url({% static "/welcome/bb2.jpg" %});
+    min-height: 100%;
+	-webkit-filter: brightness(100%); /* Safari 6.0 - 9.0 */
+    filter: brightness(100%);
+	
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+</style>
+<body>
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+    <a href="../home/#home" class="w3-bar-item w3-button w3-wide" style="padding:5px 30px">
+		<img class="w3-image" style="height:52px;" src={% static "/welcome/logo4.png" %} >
+	</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+	  
+      <a href="../home/#about" class="w3-bar-item w3-button">ABOUT</a>
+	  <a href="../home/#example" class="w3-bar-item w3-button"><i class="fa fa-th"></i> EXAMPLE</a>	  
+	  <div class="w3-dropdown-hover">
+		<button class="w3-button"><a href="../home/#methodology"><i class="fa fa-gears"></i> METHODOLOGY</a></button>
+		<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			<a href="../home/#assets" class="w3-bar-item w3-button"><i class="fa fa-file-text"></i> The Set of Asset Classes </a>
+			<a href="../home/#portfolio" class="w3-bar-item w3-button"><i class="fa fa-pie-chart"></i> Allocating Assets </a>
+			<a href="../home/#risk" class="w3-bar-item w3-button"><i class="fa fa-tachometer"></i> Risk Tolerance </a>
+			<a href="../home/#tax" class="w3-bar-item w3-button"><span class="glyphicon glyphicon-apple"></span> Tax Loss Harvesting </a>
+			<a href="../home/#rebalance" class="w3-bar-item w3-button"><i class="fa fa-balance-scale"></i> Rebalancing & Ongoing Monitoring </a>
+			<a href="../home/#database" class="w3-bar-item w3-button"><i class="fa fa-database"></i> Database </a>
+
+		</div>
+	  </div>
+
+      <a href="../home/#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>     
+      <a href="../home/#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close A—</a>
+  <a href="../home/#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="../home/#example" onclick="w3_close()" class="w3-bar-item w3-button">EXAMPLE</a>
+  <a href="../home/#methodology" onclick="w3_close()" class="w3-bar-item w3-button"> METHODOLOGY</a>
+
+  <a href="../home/#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="../home/#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image 
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">CGM Financial Advisor</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">CGM Financial Advisor</span><br>
+	<span class="w3-large">{{ txt1 }}</span>
+	<div  class={{ display1 }}>	
+		<p><a href="../home/#home"  class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off"/>Go back</a></p>
+	</div>
+	<div  class={{ display2 }}>	
+	<p><a href="#result" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Have a look</a></p>
+	</div>
+  </div> 
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</header>
+-->
+
+
+
+
+
+
+<!-- Result Section -->
+<div class="w3-container w3-border-top w3-border-bottom" style="padding:64px 16px" id="result">
+<div>	
+	<h1 class="w3-center w3-xxlarge">Your financial plan</h1>
+			<p class="w3-center w3-large">Start with: <b>${{ amount }}</b></p>
+			<!--<p class="w3-center w3-large" id="risk1">Your recommended portfolio risk level is <b>{{ risk_tolerance }}</b></p>-->
+			<p class="w3-center w3-large" id="risk0">Assess your risk tolerance <a href = "../questionnaire/">click here</a></p>
+			<script>
+				if ( {{ display }}==false ) document.getElementById("risk0").classList.add('w3-hide');
+			</script>
+	<div class="w3-row-padding" style="margin-top:32px">
+      	<div class="w3-col l2 m4 s12 w3-border">		
+			
+			<ul class="w3-ul">
+				<li><h4>Frequently Asked Questions</h4></li>
+				<li><a href="../home/#robo_advisor_w" class="w3-hover-blue"> What is Robo-Advisor?</a></li>
+				<li><a href="../home/#risk" class="w3-hover-blue"> What is risk tolerance?</a></li>
+				<li><a href="../home/#methodology" class="w3-hover-blue"> What models does CGM use?</a></li>
+				<li><a href="../home/#tax" class="w3-hover-blue"> What is Tax Loss Harvesting?</a></li>
+				<li><a href="../home/#rebalance" class="w3-hover-blue"> How does CGM rebalance its portflioflio?</a></li>
+			</ul>
+		</div>
+
+		
+				
+		<div class="w3-col l10 m8 s12">
+			<div class="w3-bar w3-black">
+			  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'risk_1');"><i class="w3-margin-right"></i>Very Conservative</button>
+			  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'risk_2');"><i class="w3-margin-right"></i>Conservative</button>
+			  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'risk_3');"><i class="w3-margin-right"></i>Moderate</button>
+			  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'risk_4');"><i class="w3-margin-right"></i>Aggressive</button>
+			  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'risk_5');"><i class="w3-margin-right"></i>Very Aggressive</button>
+			  
+			</div>
+
+			<!-- Tabs -->
+			<div id="risk_1" class="w3-container w3-border w3-white w3-padding-16 myLink" style="display: block;">
+				<div class="w3-col l12 m12 s12 ">		
+					<div class="w3-row-padding w3-border-bottom">
+
+						<div class="w3-col l7 m12 s12">
+							<iframe width="600" height="400" bgcolor=#FFFFFF frameborder=0 vspace=0 hspace=0 marginwidth=0 marginheight=0 width=100% scrolling="no" src="//plot.ly/~sion2015/7.embed"></iframe>
+						
+						</div>					
+						<div class="w3-col l5 m12 s12">
+    <a href="https://plot.ly/~sion2015/6/?share_key=2yNoLW5srKqn0GFhf9ugAd" target="_blank" title="pie_1" style="display: block; text-align: center;"><img src="https://plot.ly/~sion2015/6.png?share_key=2yNoLW5srKqn0GFhf9ugAd" alt="pie_1" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="sion2015:6" sharekey-plotly="2yNoLW5srKqn0GFhf9ugAd" src="https://plot.ly/embed.js" async></script>
+</div>
+					</div>
+					<div class="w3-row-padding w3-border-bottom">
+						
+						<div class="w3-col l12 m12 s12">
+						
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~sion2015/4.embed"></iframe>
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div id="risk_2" class="w3-container w3-border w3-white w3-padding-16 myLink" style="display: block;">
+				<div class="w3-col l12 m12 s12 ">		
+					<div class="w3-row-padding w3-border-bottom">
+
+						<div class="w3-col l7 m12 s12">
+							<iframe width="600" height="400" bgcolor=#FFFFFF frameborder=0 vspace=0 hspace=0 marginwidth=0 marginheight=0 width=100% scrolling="no" src="//plot.ly/~sion2015/11.embed"></iframe>
+						</div>					
+<div class="w3-col l5 m12 s12">
+    <a href="https://plot.ly/~sion2015/10/?share_key=mWRxUTNrYztsf1tMHZRlvk" target="_blank" title="pie_2" style="display: block; text-align: center;"><img src="https://plot.ly/~sion2015/10.png?share_key=mWRxUTNrYztsf1tMHZRlvk" alt="pie_2" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="sion2015:10" sharekey-plotly="mWRxUTNrYztsf1tMHZRlvk" src="https://plot.ly/embed.js" async></script>
+</div>
+
+					</div>
+					<div class="w3-row-padding w3-border-bottom">
+						
+						<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~sion2015/8.embed"></iframe>
+
+					</div>
+				</div>
+			</div>
+			
+			<div id="risk_3" class="w3-container w3-border w3-white w3-padding-16 myLink" style="display: block;">
+				<div class="w3-col l12 m12 s12 ">		
+					<div class="w3-row-padding w3-border-bottom">
+
+						<div class="w3-col l7 m12 s12">
+							<iframe width="600" height="400" bgcolor=#FFFFFF frameborder=0 vspace=0 hspace=0 marginwidth=0 marginheight=0 width=100% scrolling="no" src="//plot.ly/~sion2015/15.embed"></iframe>
+						</div>					
+<div class="w3-col l5 m12 s12">
+    <a href="https://plot.ly/~sion2015/14/?share_key=wjxFEFo0TTSgTLCxF9ydrj" target="_blank" title="pie_3" style="display: block; text-align: center;"><img src="https://plot.ly/~sion2015/14.png?share_key=wjxFEFo0TTSgTLCxF9ydrj" alt="pie_3" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="sion2015:14" sharekey-plotly="wjxFEFo0TTSgTLCxF9ydrj" src="https://plot.ly/embed.js" async></script>
+</div>
+					</div>
+					<div class="w3-row-padding w3-border-bottom">
+						
+						<div class="w3-col l12 m12 s12">
+							
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~sion2015/12.embed"></iframe>
+
+						</div>
+
+					</div>
+				</div>
+			</div>			
+			<div id="risk_4" class="w3-container w3-border w3-white w3-padding-16 myLink" style="display: block;">
+				<div class="w3-col l12 m12 s12 ">		
+					<div class="w3-row-padding w3-border-bottom">
+
+						<div class="w3-col l7 m12 s12">
+							<iframe width="600" height="400" bgcolor=#FFFFFF frameborder=0 vspace=0 hspace=0 marginwidth=0 marginheight=0 width=100% scrolling="no" src="//plot.ly/~sion2015/19.embed"></iframe>
+						</div>					
+<div class="w3-col l5 m12 s12">
+    <a href="https://plot.ly/~sion2015/18/?share_key=kRXwDf6bBqfE5qQLgYN8qV" target="_blank" title="pie_4" style="display: block; text-align: center;"><img src="https://plot.ly/~sion2015/18.png?share_key=kRXwDf6bBqfE5qQLgYN8qV" alt="pie_4" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="sion2015:18" sharekey-plotly="kRXwDf6bBqfE5qQLgYN8qV" src="https://plot.ly/embed.js" async></script>
+</div>
+					</div>
+					<div class="w3-row-padding w3-border-bottom">
+						
+						<div class="w3-col l12 m12 s12">
+							
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~sion2015/16.embed"></iframe>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+			<div id="risk_5" class="w3-container w3-border w3-white w3-padding-16 myLink" style="display: block;">
+				<div class="w3-col l12 m12 s12 ">		
+					<div class="w3-row-padding w3-border-bottom">
+
+						<div class="w3-col l7 m12 s12">
+							<iframe width="600" height="400" bgcolor=#FFFFFF frameborder=0 vspace=0 hspace=0 marginwidth=0 marginheight=0 width=100% scrolling="no" src="//plot.ly/~sion2015/23.embed"></iframe>
+						</div>					
+<div class="w3-col l5 m12 s12">
+    <a href="https://plot.ly/~sion2015/22/?share_key=xVbMb0mVxysh5uLK4vbElW" target="_blank" title="pie_5" style="display: block; text-align: center;"><img src="https://plot.ly/~sion2015/22.png?share_key=xVbMb0mVxysh5uLK4vbElW" alt="pie_5" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="sion2015:22" sharekey-plotly="xVbMb0mVxysh5uLK4vbElW" src="https://plot.ly/embed.js" async></script>
+</div>
+
+					</div>
+					<div class="w3-row-padding w3-border-bottom">
+						
+						<div class="w3-col l12 m12 s12">
+						
+							<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~sion2015/20.embed"></iframe>
+	
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<img src={% static "welcome/tax.png" %} width=100%/>
+		</div>
+		
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+
+ <script>
+// Tabs
+function openLink(evt, linkName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("myLink");
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
+  }
+  document.getElementById(linkName).style.display = "block";
+  evt.currentTarget.className += " w3-blue";
+}
+// Click on the first tablink on load
+document.getElementsByClassName("tablink")[{{ risk_level }}-1].click();
+</script>
+
+
+</body>
+</html>
